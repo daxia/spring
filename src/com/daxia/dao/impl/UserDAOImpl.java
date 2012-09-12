@@ -4,17 +4,23 @@ import com.daxia.dao.UserDAO;
 import com.daxia.model.User;
 
 public class UserDAOImpl implements UserDAO {
-	private User user;
+	
+	private String daoId;
 
 	public void  save(User u){
 		System.out.println("a user saved !");
 	}
-	
-	public User getUser() {
-		return user;
+
+	public String getDaoId() {
+		return daoId;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setDaoId(String daoId) {
+		this.daoId = daoId;
 	}
+	
+	public String toString(){
+		return "daoId = " + daoId;
+	}
+	
 }

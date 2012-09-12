@@ -1,7 +1,0 @@
-<beans>
-	<!-- 将userDAO和userService装配在一起，即注入 -->
-	<bean id="u" class="com.daxia.dao.impl.UserDAOImpl"/>
-	<bean id="userService" class="com.daxia.service.UserService" >
-		<property name="userDAO" bean="u"/>
-	</bean>
-</beans>

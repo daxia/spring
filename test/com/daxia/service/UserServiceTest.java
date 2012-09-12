@@ -1,23 +1,20 @@
 package com.daxia.service;
 
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.daxia.dao.UserDAO;
 import com.daxia.model.User;
-import com.daxia.spring.BeanFactory;
-import com.daxia.spring.ClassPathXmlApplicationContext;
-
+//Dependency Injection
+//Invorce 
 public class UserServiceTest {
 
 	@Test
 	public void testAdd() throws Exception {
-		BeanFactory factory = new ClassPathXmlApplicationContext();
+		ClassPathXmlApplicationContext act = new ClassPathXmlApplicationContext("beans.xml");
 		
-		UserService service = (UserService) factory.getBean("userService");
-		//UserDAO userDAO = (UserDAO) factory.getBean("u");
-		//service.setUserDAO(userDAO);
-		User u = new User();
-		service.add(u);
+		UserService service = (UserService) act.getBean("userService");
+		
+		act.destroy();
 	}
-
 }

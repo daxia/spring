@@ -1,0 +1,4 @@
+模拟spring
+
+BeanFactory，
+ClassPathXmlApplicationContext
