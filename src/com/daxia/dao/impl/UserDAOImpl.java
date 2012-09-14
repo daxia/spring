@@ -1,26 +1,20 @@
 package com.daxia.dao.impl;
 
+import org.springframework.stereotype.Component;
+
 import com.daxia.dao.UserDAO;
 import com.daxia.model.User;
 
+@Component
 public class UserDAOImpl implements UserDAO {
 	
-	private String daoId;
-
 	public void  save(User u){
 		System.out.println("a user saved !");
 	}
 
-	public String getDaoId() {
-		return daoId;
-	}
-
-	public void setDaoId(String daoId) {
-		this.daoId = daoId;
-	}
-	
-	public String toString(){
-		return "daoId = " + daoId;
+	@Override
+	public void delete() {
+		System.out.println("user delete");
 	}
 	
 }

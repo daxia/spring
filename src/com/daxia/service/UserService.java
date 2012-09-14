@@ -1,9 +1,13 @@
 package com.daxia.service;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Component;
+
 import com.daxia.dao.UserDAO;
-import com.daxia.dao.impl.UserDAOImpl;
 import com.daxia.model.User;
 
+@Component("userService")
 public class UserService {
 	//userDAO  具体实现依靠注入来操作
 	private UserDAO userDAO; 
@@ -20,6 +24,7 @@ public class UserService {
 		return userDAO;
 	}
 
+	@Resource
 	public void setUserDAO(UserDAO userDAO) {
 		this.userDAO = userDAO;
 	}
@@ -27,5 +32,4 @@ public class UserService {
 	public void destroy(){
 		System.out.println("destory");
 	}
-	
 }
