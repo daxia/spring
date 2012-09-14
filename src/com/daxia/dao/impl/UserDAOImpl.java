@@ -12,9 +12,4 @@ public class UserDAOImpl implements UserDAO {
 		System.out.println("a user saved !");
 	}
 
-	@Override
-	public void delete() {
-		System.out.println("user delete");
-	}
-	
 }

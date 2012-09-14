@@ -12,8 +12,16 @@
            ">
 	<context:annotation-config />
 	<context:component-scan base-package="com.daxia"></context:component-scan>
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<!-- <aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
 
 	<bean id="userService" class="com.daxia.service.UserService">
 	</bean>
+	
+	<bean id="logInterceptor" class="com.daxia.aop.LogInterceptor"></bean>
+	<aop:config>
+		<aop:pointcut expression="execution(public * com.daxia.service..*.add(..))" id="servicePointcut"/>
+		<aop:aspect id="logAspect" ref="logInterceptor">
+			<aop:before method="before" pointcut-ref="servicePointcut"/>
+		</aop:aspect>
+	</aop:config>
 </beans>
